@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs" />
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +97,37 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Issue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Issue.Designer.cs">
+      <DependentUpon>Issue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="return1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="return1.Designer.cs">
+      <DependentUpon>return1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SathosaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SathosaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Signin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +140,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Issue.resx">
+      <DependentUpon>Issue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,6 +159,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="return1.resx">
+      <DependentUpon>return1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Signin.resx">
       <DependentUpon>Signin.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +175,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SathosaDataSet.xsc">
+      <DependentUpon>SathosaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SathosaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SathosaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SathosaDataSet.xss">
+      <DependentUpon>SathosaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -127,6 +195,46 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Actions-dialog-ok-apply-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_box_46885.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_issue_48691.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_issue_486911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_box_468851.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_flat-style-circle-add_1312548.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_error_1646012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_ic_assignment_returned_48px_3669445.png" />
+    <Content Include="Sathosa.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sathosa_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Sathosa.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

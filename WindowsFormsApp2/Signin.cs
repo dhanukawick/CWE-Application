@@ -60,6 +60,9 @@ namespace WindowsFormsApp2
                     if(sdr.Read())
                     {
                         MessageBox.Show("You Signed in");
+                        this.Hide();
+                        Home ho = new Home("Employee No:" +txtEmp.Text);
+                        ho.Show();
                     }
                     else
                     {
